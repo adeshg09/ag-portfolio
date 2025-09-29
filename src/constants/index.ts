@@ -1,6 +1,3 @@
-import { AiFillInstagram } from "react-icons/ai";
-import { FaGithub, FaYoutube, FaTiktok, FaFacebook } from "react-icons/fa6";
-
 export const navItems = [
   {
     name: "Home",
@@ -22,8 +19,12 @@ export const navItems = [
 
 export const FrontEndSkills = [
   {
-    name: "React",
+    name: "React.js",
     img: "/assets/images/tech-stacks/react.png",
+  },
+  {
+    name: "Next.js",
+    img: "/assets/images/tech-stacks/next.png",
   },
   {
     name: "Sass",
@@ -34,31 +35,25 @@ export const FrontEndSkills = [
     img: "/assets/images/tech-stacks/figma.png",
   },
   {
-    name: "Tailwind",
+    name: "Tailwind CSS",
     img: "/assets/images/tech-stacks/tailwind.png",
   },
   {
-    name: "Solid",
-    img: "/assets/images/tech-stacks/solidjs.png",
-  },
-  {
-    name: "Astro",
-    img: "/assets/images/tech-stacks/astro.png",
+    name: "React Native",
+    img: "/assets/images/tech-stacks/react.png",
   },
 ];
+
 export const BackEndSkills = [
   {
-    name: "Node",
+    name: "Node.js",
     img: "/assets/images/tech-stacks/node.png",
   },
   {
-    name: "Express",
+    name: "Express.js",
     img: "/assets/images/tech-stacks/express.png",
   },
-  {
-    name: "Next",
-    img: "/assets/images/tech-stacks/next.png",
-  },
+
   {
     name: "Firebase",
     img: "/assets/images/tech-stacks/firebase.png",
@@ -68,6 +63,7 @@ export const BackEndSkills = [
     img: "/assets/images/tech-stacks/strapi.png",
   },
 ];
+
 export const dbSkills = [
   {
     name: "Postgres",
@@ -90,6 +86,7 @@ export const dbSkills = [
     img: "/assets/images/tech-stacks/supabase.png",
   },
 ];
+
 export const otherSkills = [
   {
     name: "Git",
@@ -102,10 +99,6 @@ export const otherSkills = [
   {
     name: "Google Cloud",
     img: "/assets/images/tech-stacks/gcp.png",
-  },
-  {
-    name: "Spline 3D",
-    img: "/assets/images/tech-stacks/spline.png",
   },
   {
     name: "Photoshop",
@@ -135,30 +128,39 @@ export const contacts = [
   },
 ];
 
-export const socials = [
+export const projects = [
   {
-    name: "Github",
-    Icon: FaGithub,
-    link: "https://github.com/creativeambition/",
+    title: "Rentiful",
+    techs: [
+      "/assets/images/tech-stacks/react.png",
+      "/assets/images/tech-stacks/next.png",
+      "/assets/images/tech-stacks/tailwind.png",
+      "/assets/images/tech-stacks/node.png",
+      "/assets/images/tech-stacks/express.png",
+      "/assets/images/tech-stacks/postgres.png",
+      "/assets/images/tech-stacks/aws.png",
+    ],
+    thumbnail: "/assets/images/projects/LUC.png",
+    description: "Full Stack Real Estate Web-App",
+    link: "https://github.com/adeshg09/real-estate-webapp",
+    github: "https://github.com/adeshg09/real-estate-webapp",
   },
+];
+
+export const workExperiences = [
   {
-    name: "YouTube",
-    Icon: FaYoutube,
-    link: "https://youtube.com/@creative-ambition/",
-  },
-  {
-    name: "Instagram",
-    Icon: AiFillInstagram,
-    link: "https://instagram.com/_creative_ambition/",
-  },
-  {
-    name: "TikTok",
-    Icon: FaTiktok,
-    link: "https://tiktok.com/@creative_ambition/",
-  },
-  {
-    name: "Facebook",
-    Icon: FaFacebook,
-    link: "https://web.facebook.com/share/g/NY81ZaaMtJ6qrrPm/",
+    id: 1,
+    name: "Techechelons Infosolutions Pvt. Ltd.",
+    pos: "Full Stack Developer Intern",
+    duration: "Nov 2024 - April 2025",
+    title:
+      "• Developed core modules for a scalable SaaS-based HRMS platform with multi-tenant architecture, where each tenant had an isolated Postgresql schema, ensuring data security and strict isolation.\n" +
+      "• Implemented advanced role-based access control (RBAC), subscription workflows, and access assignments across 10+ tenants, improving system flexibility and admin control.\n" +
+      "• Built and maintained full-stack features using React.js, React Libraries, Material UI, Node.js, and Express.js, streamlining HR processes and accelerating user onboarding.\n" +
+      "• Contributed to a client-based skincare mobile application using React Native and React Native packages, focusing on responsive UI and consistent brand experience across Android and iOS.\n" +
+      "• Integrated 10+ REST APIs for product listings, order placement, and various modules of this application, resulting in improved app reliability and 25% reduction in development time for new features.\n" +
+      "• Ensured code modularity, reusability, and clean architecture across frontend and backend, enabling 30% faster feature rollouts and easier collaboration.",
+    icon: "/assets/images/experiences/techechleons.png",
+    animation: "victory",
   },
 ];

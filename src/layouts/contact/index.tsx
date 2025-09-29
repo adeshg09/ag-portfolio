@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
       <div className="flex flex-col items-center justify-center">
         {/* Subheading */}
         <span
-          className={`${poiret_one.className} mt-20 text-2xl text-gray-300`}
+          className={`${poiret_one.className} mt-auto text-2xl text-gray-300`}
         >
           get in touch
         </span>

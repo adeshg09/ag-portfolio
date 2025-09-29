@@ -3,12 +3,14 @@ import PatternBackground from "@/components/pattern-background";
 import ScrollIndicator from "@/components/scroll-indicator";
 import SplineModel from "@/components/spline-model";
 import { Spotlight } from "@/components/spot-light";
+import WorkExperience from "@/layouts/work-experience";
 import About from "@/layouts/about";
 import Biography from "@/layouts/biography";
 import Contact from "@/layouts/contact";
 import Footer from "@/layouts/footer";
 import Hero from "@/layouts/hero";
 import TechnicalSkills from "@/layouts/technical-skills";
+import Projects from "@/layouts/projects";
 
 export default function Home() {
   return (
@@ -26,6 +28,8 @@ export default function Home() {
       <About />
       <Biography />
       <TechnicalSkills />
+      <Projects />
+      <WorkExperience />
       <Contact />
       <Footer />
     </main>

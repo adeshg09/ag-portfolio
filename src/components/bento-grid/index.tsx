@@ -1,3 +1,4 @@
+"use client";
 import React, { memo, useMemo } from "react";
 import Link from "next/link";
 import { PiFilePdfFill } from "react-icons/pi";
@@ -8,6 +9,7 @@ import { montserrat_alternates } from "../../../public/fonts";
 import CardCorners from "../card-corners";
 import { FancyButtonAlt } from "../fancy-button";
 import SkillsShowcaseCard from "./skills-showcase-card";
+import { contacts } from "@/constants";
 
 interface TechStack {
   primary: string[];
@@ -38,14 +40,24 @@ const BentoGrid: React.FC<BentoGridProps> = memo(function BentoGrid({
 }) {
   /* Constants */
   const TECH_STACK: TechStack = {
-    primary: ["Solid", "React", "Next", "Node", "Express", "MongoDB"],
+    primary: [
+      "React",
+      "Next",
+      "TypeScript",
+      "React Native",
+      "Node",
+      "Express",
+      "MongoDB",
+    ],
     secondary: [
       "Postgres",
       "MySQL",
       "Firebase",
       "AWS",
       "Google Cloud",
-      "Blender",
+      "Docker",
+      "Git",
+      "Figma",
     ],
   } as const;
 
@@ -71,12 +83,18 @@ const BentoGrid: React.FC<BentoGridProps> = memo(function BentoGrid({
   const renderTechStack = useMemo(
     () => ({
       primary: TECH_STACK.primary.map((item) => (
-        <div key={item} className="bg-black rounded-lg p-4 py-2 text-sm">
+        <div
+          key={item}
+          className="bg-black rounded-lg px-4 py-2 text-sm whitespace-nowrap flex-shrink-0"
+        >
           {item}
         </div>
       )),
       secondary: TECH_STACK.secondary.map((item) => (
-        <div key={item} className="bg-black rounded-lg p-4 py-2 text-sm">
+        <div
+          key={item}
+          className="bg-black rounded-lg px-4 py-2 text-sm whitespace-nowrap flex-shrink-0"
+        >
           {item}
         </div>
       )),
@@ -138,11 +156,11 @@ const BentoGrid: React.FC<BentoGridProps> = memo(function BentoGrid({
   );
 
   const renderTechStackCard = (): React.ReactNode => (
-    <div className="flex flex-col justify-start items-start p-4 relative min-h-[250px] border bg-black/20 border-white/25 col-span-2 gap-8">
+    <div className="flex flex-col justify-start items-start p-4 relative min-h-[250px] border bg-black/20 border-white/25 col-span-2 gap-8 overflow-hidden">
       <CardCorners />
       <DynamicInteractiveGradientBg />
 
-      <div className="flex flex-col gap-2 items-center justify-center">
+      <div className="flex flex-col gap-2 items-center justify-center w-full">
         <h1
           className={`relative ${montserrat_alternates.className} whitespace-nowrap font-semibold text-center `}
         >
@@ -154,25 +172,51 @@ const BentoGrid: React.FC<BentoGridProps> = memo(function BentoGrid({
         </span>
       </div>
 
-      <div className="flex flex-col gap-2 mt-auto w-full">
-        <div
-          className="flex justify-between gap-2"
-          style={{
-            maskImage: "radial-gradient(circle, black, transparent)",
-          }}
-        >
-          {renderTechStack.primary}
+      <div className="flex flex-col gap-2 mt-auto w-full relative">
+        {/* First Row - Scrolling Left to Right */}
+        <div className="relative w-full overflow-hidden">
+          <div className="flex gap-2 animate-scroll-right">
+            {renderTechStack.primary}
+            {renderTechStack.primary}
+          </div>
         </div>
 
-        <div
-          className="flex justify-between items-start gap-2 whitespace-nowrap"
-          style={{
-            maskImage: "radial-gradient(circle, black, transparent)",
-          }}
-        >
-          {renderTechStack.secondary}
+        {/* Second Row - Scrolling Right to Left */}
+        <div className="relative w-full overflow-hidden">
+          <div className="flex gap-2 animate-scroll-left">
+            {renderTechStack.secondary}
+            {renderTechStack.secondary}
+          </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes scroll-right {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        .animate-scroll-left {
+          animation: scroll-left 20s linear infinite;
+        }
+
+        .animate-scroll-right {
+          animation: scroll-right 20s linear infinite;
+        }
+      `}</style>
     </div>
   );
 
@@ -194,10 +238,6 @@ const BentoGrid: React.FC<BentoGridProps> = memo(function BentoGrid({
   const renderAvailabilityCard = (): React.ReactNode => (
     <div className="flex justify-center md:hidden p-4 xl:flex flex-col relative min-h-[250px] border border-white/25 bg-black/20 backdrop-blur-md">
       <CardCorners />
-      {/* <div className="flex items-center gap-2 mx-auto">
-        <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
-        <span className="font-semibold">Available for Work</span>
-      </div> */}
       <div className="flex flex-col items-center my-auto gap-4">
         <h2 className="text-xl font-bold text-center">
           Open to <span style={{ color: ACCENT_COLOR }}> Opportunities</span>
@@ -209,7 +249,7 @@ const BentoGrid: React.FC<BentoGridProps> = memo(function BentoGrid({
 
       <Link
         target="_blank"
-        href={PERSONAL_INFO.resume.path}
+        href={contacts[1].link}
         download={true}
         className="flex flex-col mt-auto"
       >

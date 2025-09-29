@@ -29,7 +29,7 @@ const TechnicalSkills = memo(function TechnicalSkills() {
         <span className={`opacity-80 font-normal ${morona.className}`}>
           collection of my core skills
         </span>
-        <h1 className={`text-4xl md:text-4xl font-medium`}>
+        <h1 className={`text-4xl md:text-4xl font-medium text-center`}>
           and technologies I work with
         </h1>
       </div>
