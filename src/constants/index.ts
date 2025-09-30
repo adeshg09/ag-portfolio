@@ -140,9 +140,9 @@ export const projects = [
       "/assets/images/tech-stacks/postgres.png",
       "/assets/images/tech-stacks/aws.png",
     ],
-    thumbnail: "/assets/images/projects/LUC.png",
+    thumbnail: "/assets/images/projects/rentiful1.png",
     description: "Full Stack Real Estate Web-App",
-    link: "https://github.com/adeshg09/real-estate-webapp",
+    link: "https://rentiful.builtbyag09.tech",
     github: "https://github.com/adeshg09/real-estate-webapp",
   },
 ];
